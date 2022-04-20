@@ -1,0 +1,274 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+nav{
+    height: 50px;
+    background: #FEE996;
+    position: relative;
+}
+
+nav a{
+    font-size: 25px;
+    background-color: rgb(250, 247, 98);
+    border-radius: 10px;
+    margin-right: 30px;
+    margin-top: 10px;    
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+nav :nth-child(2) {
+    float: right;
+}
+
+#welcome{
+    font-size: 30px;
+    font-weight: 400;
+    margin-left: 20px;
+    margin-top: 20px;
+    color: rgb(60, 163, 223);
+}
+
+#logout{
+    float: right;
+}
+
+nav a:nth-child(1){
+    position: absolute;    
+    top: 20px;
+    margin-left: 30px;
+    background-color: #4ea2da;
+}
+
+
+nav :nth-child(3) {
+    float: right;
+}
+
+nav :nth-child(4) {
+    float: right;
+}
+
+nav a:hover{
+    box-shadow: 0 0 5px 5px rgb(230, 199, 199);
+}
+
+.heading{
+    text-align: center;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    font-size: 70px;
+}
+
+.main{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+#mongo{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-top: 50px;
+}
+.entry{
+    margin-left: 50px;
+    margin-top: 35px;
+    background-color: rgb(240, 235, 234);
+    height: 300px;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.p-1:hover {
+    box-shadow: 0 12px 16px 0 rgb(43, 41, 41);
+}
+
+.p-2:hover {
+    box-shadow: 0 12px 16px 0 rgb(43, 41, 41);
+}
+
+.p-3:hover {
+    box-shadow: 0 12px 16px 0 rgb(43, 41, 41);
+}
+
+form {
+    width: 300px;
+    margin: 0 auto;
+    padding: 30px;
+    box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    background: white;
+}
+
+input {
+    padding: 10px 12px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    font-size: 1em;
+    width: 100%;
+}
+
+label {
+    display: block;
+    margin: 20px 0 10px;
+}
+
+button {
+    margin-top: 30px;
+    border-radius: 36px;
+    background: #FEE996;
+    border: 0;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 0.8em;
+    display: block;
+    padding: 10px 16px;
+    letter-spacing: 2px;
+}
+
+button:hover{
+    box-shadow: 0 0 3px 3px rgb(236, 234, 101);
+    cursor: pointer;
+}
+.content{
+    margin-top: 35px;
+    margin-left: 20px;
+    background-color: rgb(233, 248, 248);
+    padding: 15px;
+    border-radius: 10px;
+    margin-right: 20px;
+    height: 350px;
+}
+
+.content h1{
+    margin-left: 100px;
+    font-size: 50px;
+}
+
+.content p{
+    margin-left: 130px;
+    font-size: 30px;
+    margin-top: 10px;
+}
+
+.content img{
+    margin-top: 10px;
+    margin-left: 150px;
+    height: 200px;
+    width: 500px;
+    border-radius: 10px;
+}
+
+
+/* upload phoyo */
+.profile-pic-div {
+    height: 200px;
+    width: 200px;
+    margin-left: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 1px solid grey;
+}
+
+#photo {
+    height: 100%;
+    width: 100%;
+}
+
+#file {
+    display: none;
+}
+
+#uploadBtn {
+    height: 30px;
+    width: 8%;
+    position: absolute;
+    bottom: 58%;
+    left: 52%;
+    transform: translateX(-50%);
+    text-align: center;
+    background: rgba(0, 0, 0, 0.7);
+    color: wheat;
+    line-height: 30px;
+    font-family: sans-serif;
+    font-size: 15px;
+    cursor: pointer;
+    display: none;
+    border-radius: 5px;
+}
+
+/*  Course Page     */
+.sidebar{
+    /* background-color: rgba(120, 120, 187,0.6); */
+    width: 300px;
+}
+
+.sidebar h1{
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    background-color: rgb(111, 117, 153);
+    color: white;
+    height: 60px;
+    padding: 15px;
+    font-size: 50px;
+}
+
+.sidebar ul{
+    background-color:rgb(96, 177, 231);
+    list-style-type: none;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.sidebar ul li{
+    font-size: 30px;
+    padding: 15px;
+    text-align: center;
+    border: 2px solid aliceblue;
+    border-spacing: 4px;
+    border-radius: 15px;
+}
+
+.sidebar ul li:hover{
+    background-color: rgb(32, 102, 253);
+    box-shadow: 0 0 2px 2px rgb(22, 240, 76);
+    cursor: pointer;
+}
+
+.video{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+}
+
+.coursevideos{
+    margin-top: 30px;
+    margin-left: 60px;
+}
+
+.csvideo, .cvideo, .pythonvideo, .datavideo, .dbmsvideo, .gitvideo{
+    display: none;
+}
+
+.tab1{
+    text-align: center;
+}
+
+.tab1 h1{
+    font-size:60px;
+    margin-bottom: 50px;
+}
+
+.tab1 p{
+    margin-top: 20px;
+    font-size: 35px;
+}
+
+.comp{
+    position: absolute;
+    left: 50%;
+    bottom: 2%;
+}

@@ -1,0 +1,183 @@
+<%- include('partials/header'); -%>
+
+<div class="video">
+  <div class="sidebar">
+    <h1>Courses</h1>
+    <ul class="sidelist">
+      <li class="cs">Computer Science</li>
+      <li class="c">C/c++</li>
+      <li class="python">python</li>
+      <li class="data">Data Analysis</li>
+      <li class="dbms">DBMS</li>
+      <li class="git">Github</li>
+    </ul>
+  </div>
+
+  <div class="coursevideos">
+    <div class="tab1">
+      <h1>Welcome to LMS</h1>
+      <p>
+        These Courses will make you very proficient in respective categories.
+      </p>
+      <p>To start..</p>
+      <p>Click the tabs given on the right side.</p>
+    </div>
+    <div class="csvideo">
+      <iframe
+        width="853"
+        height="480"
+        src="https://www.youtube.com/embed/zOjov-2OZ0E"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+      <button class="comp">Mark Complete</button>
+    </div>
+
+    <div class="cvideo">
+      <iframe
+        width="785"
+        height="441"
+        src="https://www.youtube.com/embed/ZSPZob_1TOk"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+      <button class="comp">Mark Complete</button>
+    </div>
+
+    <div class="pythonvideo">
+      <iframe
+        width="853"
+        height="480"
+        src="https://www.youtube.com/embed/rfscVS0vtbw"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+      <button class="comp">Mark Complete</button>
+    </div>
+    <div class="datavideo">
+      <iframe
+        width="853"
+        height="480"
+        src="https://www.youtube.com/embed/A1JN_UN3mYE"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+      <button class="comp">Mark Complete</button>
+    </div>
+    <div class="dbmsvideo">
+      <iframe
+        width="853"
+        height="480"
+        src="https://www.youtube.com/embed/kBdlM6hNDAE?list=PLxCzCOWd7aiFAN6I8CuViBuCdJgiOkT2Y"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+      <button class="comp">Mark Complete</button>
+    </div>
+    <div class="gitvideo">
+      <iframe
+        width="853"
+        height="480"
+        src="https://www.youtube.com/embed/RGOj5yH7evk"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+      <button class="comp">Mark Complete</button>
+    </div>
+  </div>
+</div>
+
+<%- include('partials/footer'); -%>
+
+<script>
+  const cscience = document.querySelector(".cs");
+  const csvideo = document.querySelector(".csvideo");
+
+  const c = document.querySelector(".c");
+  const cvideo = document.querySelector(".cvideo");
+
+  const p = document.querySelector(".python");
+  const pvideo = document.querySelector(".pythonvideo");
+
+  const data = document.querySelector(".data");
+  const dvideo = document.querySelector(".datavideo");
+
+  const db = document.querySelector(".dbms");
+  const dbvideo = document.querySelector(".dbmsvideo");
+
+  const g = document.querySelector(".git");
+  const gvideo = document.querySelector(".gitvideo");
+
+  const tab1 = document.querySelector(".tab1");
+  cscience.addEventListener("click", () => {
+    tab1.style.display = "none";
+    csvideo.style.display = "block";
+    cvideo.style.display = "none";
+    pvideo.style.display = "none";
+    dvideo.style.display = "none";
+    dbvideo.style.display = "none";
+    gvideo.style.display = "none";
+  });
+
+  c.addEventListener("click", () => {
+    tab1.style.display = "none";
+    csvideo.style.display = "none";
+    cvideo.style.display = "block";
+    pvideo.style.display = "none";
+    dvideo.style.display = "none";
+    dbvideo.style.display = "none";
+    gvideo.style.display = "none";
+  });
+
+  p.addEventListener("click", () => {
+    tab1.style.display = "none";
+    csvideo.style.display = "none";
+    cvideo.style.display = "none";
+    pvideo.style.display = "block";
+    dvideo.style.display = "none";
+    dbvideo.style.display = "none";
+    gvideo.style.display = "none";
+  });
+
+  data.addEventListener("click", () => {
+    tab1.style.display = "none";
+    csvideo.style.display = "none";
+    cvideo.style.display = "none";
+    pvideo.style.display = "none";
+    dvideo.style.display = "block";
+    dbvideo.style.display = "none";
+    gvideo.style.display = "none";
+  });
+
+  db.addEventListener("click", () => {
+    tab1.style.display = "none";
+    csvideo.style.display = "none";
+    cvideo.style.display = "none";
+    pvideo.style.display = "none";
+    dvideo.style.display = "none";
+    dbvideo.style.display = "block";
+    gvideo.style.display = "none";
+  });
+
+  g.addEventListener("click", () => {
+    tab1.style.display = "none";
+    csvideo.style.display = "none";
+    cvideo.style.display = "none";
+    pvideo.style.display = "none";
+    dvideo.style.display = "none";
+    dbvideo.style.display = "none";
+    gvideo.style.display = "block";
+  });
+</script>

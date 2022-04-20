@@ -1,0 +1,30 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+      integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <nav>
+      <% if(user) { %>
+      <span id="welcome">Welcome, <%= user.fname %></span>
+      <a href="./profile" style="text-decoration: none">Profile</a>
+      <a href="./notes" style="text-decoration: none">Notes</a>
+      <a href="./course" style="text-decoration: none">Course</a>
+      <a href="/logout" style="text-decoration: none" id="logout"
+        ><span>Logout</span></a
+      >
+      <% } else { %>
+      <a href="/" style="text-decoration: none"><span>LMS</span></a>
+      <a href="./signup" style="text-decoration: none"><span>Sign-Up</span></a>
+      <% } %>
+    </nav>
+  </body>
+</html>

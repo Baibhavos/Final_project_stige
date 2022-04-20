@@ -1,0 +1,51 @@
+<%- include('partials/header'); -%>
+<!-- <table>
+  <tr>
+    <td><img src="./images/<%= user.image %>" alt="" /></td>
+  </tr>
+  <tr>
+    <td>Email</td>
+    <td><%= user.email %></td>
+  </tr>
+  <tr>
+    <td>First Name:</td>
+    <td><%= user.fname %></td>
+  </tr>
+  <tr>
+    <td>Last Name:</td>
+    <td><%= user.lname %></td>
+  </tr>
+  <tr>
+    <td>Contact no. :</td>
+    <td><%= user.phoneno %></td>
+  </tr>
+</table> -->
+<form action="/profile" method="post">
+  <div class="profile-pic-div">
+    <img src="image.jpg" id="photo" />
+    <input type="file" id="file" name="photo" />
+    <label for="file" id="uploadBtn">Choose Photo</label>
+  </div>
+
+  <input type="hidden" name="user_id" value="<%= user._id %>" />
+  <label for="email">Email:</label>
+  <input type="text" name="email" id="email" placeholder="<%= user.email %>" />
+
+  <label for="fname">First name:</label>
+  <input type="text" name="fname" id="fname" placeholder="<%= user.fname %>" />
+
+  <label for="lname">Last name:</label>
+  <input type="text" name="lname" id="lname" placeholder="<%= user.lname %>" />
+
+  <label for="phoneno">Contact number:</label>
+  <input
+    type="number"
+    name="phoneno"
+    id="phoneno"
+    placeholder="<%= user.phoneno %>"
+  />
+
+  <button>Update Profile</button>
+</form>
+
+<%- include('partials/footer'); -%>

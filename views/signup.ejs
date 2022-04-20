@@ -1,0 +1,119 @@
+<%- include('partials/header'); -%>
+<div class="entry">
+  <form action="/signup">
+    <div class="profile-pic-div">
+      <img src="image.jpg" id="photo" />
+      <input type="file" id="file" name="photo" />
+      <label for="file" id="uploadBtn">Choose Photo</label>
+      <div class="photo error"></div>
+    </div>
+
+    <label for="email">Email:</label>
+    <input type="text" name="email" id="email" required />
+    <div class="email error"></div>
+
+    <label for="fname">First name:</label>
+    <input type="text" name="fname" id="fname" required />
+    <div class="fname error"></div>
+
+    <label for="lname">Last name:</label>
+    <input type="text" name="lname" id="lname" required />
+    <div class="lname error"></div>
+
+    <label for="phoneno">Contact number:</label>
+    <input type="number" name="phoneno" id="phoneno" required />
+    <div class="phoneno error"></div>
+
+    <label for="pass">Password:</label>
+    <input type="pasword" name="password" id="password" required />
+    <div class="password error"></div>
+
+    <button>Signup</button>
+  </form>
+</div>
+
+<%- include('partials/footer'); -%>
+
+<script>
+  const imgDiv = document.querySelector(".profile-pic-div");
+  const img = document.querySelector("#photo");
+  const file = document.querySelector("#file");
+  const uploadBtn = document.querySelector("#uploadBtn");
+
+  //if user hover on img div
+  imgDiv.addEventListener("mouseenter", function () {
+    uploadBtn.style.display = "block";
+  });
+
+  //if we hover out from img div
+  imgDiv.addEventListener("mouseleave", function () {
+    uploadBtn.style.display = "none";
+  });
+
+  file.addEventListener("change", function () {
+    //this refers to file
+    const choosedFile = this.files[0];
+
+    if (choosedFile) {
+      const reader = new FileReader();
+      reader.addEventListener("load", function () {
+        img.setAttribute("src", reader.result);
+      });
+
+      reader.readAsDataURL(choosedFile);
+    }
+  });
+
+  const form = document.querySelector("form");
+  const emailError = document.querySelector(".email.error");
+  const fnameError = document.querySelector(".fname.error");
+  const lnameError = document.querySelector(".lname.error");
+  const phoneError = document.querySelector(".phoneno.error");
+  const passwordError = document.querySelector(".password.error");
+  //const photoError = document.querySelector(".photo.error");
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    //Reset Errors
+    //photoError.textContent = "";
+    emailError.textContent = "";
+    fnameError.textContent = "";
+    lnameError.textContent = "";
+    phoneError.textContent = "";
+    passwordError.textContent = "";
+
+    // get values
+    //const photo = form.photo.value;
+    const email = form.email.value;
+    const fname = form.fname.value;
+    const lname = form.lname.value;
+    const phoneno = form.phoneno.value;
+    const password = form.password.value;
+
+    try {
+      const res = await fetch("/signup", {
+        method: "POST",
+        body: JSON.stringify({ email, fname, lname, phoneno, password }),
+        headers: { "Content-Type": "application/json" },
+      });
+
+      const data = await res.json();
+      console.log(data);
+      if (data.errors) {
+        //photoError.textContent = data.errors.photo;
+        emailError.textContent = data.errors.email;
+        fnameError.textContent = data.errors.fname;
+        lnameError.textContent = data.errors.lname;
+        phoneError.textContent = data.errors.phoneno;
+        passwordError.textContent = data.errors.password;
+      }
+
+      if (data.user) {
+        location.assign("/");
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  });
+</script>
