@@ -3,10 +3,13 @@ const authRoutes = require('./routes/authRoutes');
 const cookieParser = require('cookie-parser');
 const mongoose = require('mongoose');
 const { requireAuth, checkUser } = require('./middleware/authMiddleware');
-
+const dotenv = require("dotenv");
 // const multer = require('multer');
 
+dotenv.config();
+
 const app = express();
+
 
 app.use(express.static('public'));
 //app.use(express.urlencoded({extended: true}));
@@ -17,7 +20,7 @@ app.use(cookieParser());
 app.set('view engine', 'ejs');
 
 
-const dbURI = 'mongodb+srv://stigeweek8:stige%40mongodb@stige.zbvac.mongodb.net/fianlproject?retryWrites=true&w=majority';
+const dbURI = process.env.MONGODB_URL;
 mongoose.connect(dbURI, {useNewUrlParser: true, useUnifiedTopology: true})
     .then((result) => console.log('Connected to DB'))
     .catch((err) => console.log(err));
