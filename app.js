@@ -26,7 +26,7 @@ mongoose.connect(dbURI, {useNewUrlParser: true, useUnifiedTopology: true})
     .catch((err) => console.log(err));
 //console.log('Started');
 
-const port = process.env.port
+const port = process.env.PORT || 3000;
 app.listen(port, ()=> console.log(`Server running on port ${port}`));
 
 app.get('*', checkUser);
